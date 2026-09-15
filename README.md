@@ -1,4 +1,6 @@
-# Resolução do Problema das N-Rainhas via Busca em Espaço de Estados Completos
+# Resolução do Problema das N-Rainhas por Buscas
+## Nomes: Adrian Camargo e Rafael Santos
+
 
 Este projeto implementa a solução para o clássico **Problema das $N$-Rainhas** utilizando a biblioteca `aigyminsper`. 
 
