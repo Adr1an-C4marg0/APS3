@@ -2,27 +2,27 @@
 
 ---
 
-## Nomes: Adrian Camargo e Rafael Santos
+## Nomes: Adrian Aparecido da Silva Camargo e Rafael Santos Pereira
 
 ---
 
 Este projeto implementa a solução para o clássico **Problema das $N$-Rainhas** utilizando a biblioteca `aigyminsper`. 
 
-A abordagem utilizada é a de **Espaço de Estados Completos**, na qual o tabuleiro inicia com todas as $N$ rainhas posicionadas (uma por linha, em colunas sorteadas) e os sucessores realizam movimentos locais (alterando a coluna de uma rainha por vez) até zerar todos os conflitos de ataque em linhas, colunas e diagonais.
+A abordagem utilizada é a de **Espaço de Estados**, na qual o tabuleiro inicia com todas as $N$ rainhas posicionadas (uma por linha, em colunas sorteadas) e os sucessores realizam movimentos locais (alterando a coluna de uma rainha por vez) até zerar todos os conflitos de ataque em linhas, colunas e diagonais.
 
 ---
 
 ## 📊 Tabela Comparativa dos Resultados ($N = 4, 5, 6, 7, 8$)
 
-Os testes a seguir consideraram execuções com o mesmo tabuleiro inicial aleatório (para fins de padronização dos benchmarks).
+Os testes a seguir consideraram execuções com o mesmo tabuleiro inicial aleatório (para gerar um padrão na análise).
 
-| $N$ | Conflitos Iniciais | Busca em Largura (BFS) | Busca em Profundidade (DFS, $m=10$) | Profundidade Iterativa (IDDFS) | Algoritmo Vencedor |
-|:---:|:------------------:|:----------------------:|:----------------------------------:|:------------------------------:|:------------------:|
-| **4** | 3 | 🟢 **Sucesso** (~0.003s) | 🟢 **Sucesso** (~0.005s) | 🟢 **Sucesso** (~0.001s) | **IDDFS / BFS** |
-| **5** | 4 | 🟢 **Sucesso** (~0.018s) | 🟢 **Sucesso** (~0.005s) | 🟢 **Sucesso** (~0.002s) | **IDDFS** |
-| **6** | 4 | 🟢 **Sucesso** (~2.68s) | 🟢 **Sucesso** (~1.55s)* | 🟢 **Sucesso** (~0.15s) | **IDDFS** |
-| **7** | 5 | 🔴 **Timeout / Memória** | 🔴 **Timeout / Ramo Infinitamente Profundo** | 🟢 **Sucesso** (~2.20s) | **IDDFS** |
-| **8** | 6 | 🔴 **Timeout / Memória** | 🔴 **Timeout / Ramo Infinitamente Profundo** | 🟢 **Sucesso** (~41.67s) | **IDDFS** |
+| $N$ | Conflitos Iniciais | Busca em Largura (BFS) | Busca em Profundidade (DFS, $m=10$) | Profundidade Iterativa (IDDFS) |
+|:---:|:------------------:|:----------------------:|:----------------------------------:|:------------------------------:|
+| **4** | 3 | 🟢 **Sucesso** (~0.003s) | 🟢 **Sucesso** (~0.005s) | 🟢 **Sucesso** (~0.001s) |
+| **5** | 4 | 🟢 **Sucesso** (~0.018s) | 🟢 **Sucesso** (~0.005s) | 🟢 **Sucesso** (~0.002s) |
+| **6** | 4 | 🟢 **Sucesso** (~2.68s) | 🟢 **Sucesso** (~1.55s)* | 🟢 **Sucesso** (~0.15s) |
+| **7** | 5 | 🔴 **Timeout / Memória** | 🔴 **Timeout / Ramo Infinitamente Profundo** | 🟢 **Sucesso** (~2.20s) |
+| **8** | 6 | 🔴 **Timeout / Memória** | 🔴 **Timeout / Ramo Infinitamente Profundo** | 🟢 **Sucesso** (~41.67s) |
 
 *\*Para o DFS com $N=6$, utilizou-se limite de profundidade $m=15$.*
 
